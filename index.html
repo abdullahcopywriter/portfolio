@@ -3,238 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah | Direct Response Copywriter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>Copywriter | Fitness & Skincare Specialist</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --insta: #E1306C;
-            --gmail: #D44638;
+            --bg: #0a0a0a;
+            --card: #161616;
+            --text: #ededed;
+            --accent: #ccff00; /* Neon Lime for Fitness/Energy */
+            --soft: #ff8fab; /* Soft Pink for Skincare */
         }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            color: var(--dark);
-            background: var(--light);
-            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        .logo { font-weight: 800; font-size: 1.5rem; text-decoration: none; color: var(--dark); cursor: pointer; }
-        .logo span { color: var(--primary); }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 700;
-            margin-left: 20px;
-            cursor: pointer;
+        header {
+            text-align: center;
+            padding: 60px 0;
         }
 
-        .page { display: none; }
-        .active { display: block; }
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
 
-        .hero { padding: 100px 5%; text-align: center; background: #fff; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
-        .highlight { color: var(--primary); }
-        .hero p { font-size: 1.25rem; color: #64748b; max-width: 700px; margin: 0 auto 2rem; }
+        .tagline {
+            font-size: 1.2rem;
+            color: #888;
+        }
 
-        .portfolio { padding: 80px 5%; max-width: 1200px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        
+        .highlight {
+            color: var(--accent);
+        }
+
+        /* Portfolio Grid */
+        .section-title {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #555;
+            margin-top: 50px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+        }
+
         .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border: 1px solid #e2e8f0;
-            cursor: pointer;
-            text-align: left;
+            background: var(--card);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid #222;
+            transition: transform 0.2s ease;
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .tag { display: inline-block; background: #dbeafe; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; }
 
-        .project-detail { max-width: 800px; margin: 50px auto; padding: 40px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .copy-box { background: #f1f5f9; padding: 25px; border-radius: 8px; border-left: 5px solid var(--primary); margin: 20px 0; font-size: 1.1rem; color: #1e293b; }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #333;
+        }
 
-        .contact-section { padding: 100px 5%; text-align: center; max-width: 800px; margin: auto; }
-        .contact-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
-        
-        .btn-contact {
-            padding: 18px 35px;
-            border-radius: 8px;
-            font-weight: 700;
+        .niche-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .fitness { background: var(--accent); color: black; }
+        .skincare { background: var(--soft); color: black; }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--text);
+            color: var(--bg);
+            padding: 15px 30px;
             text-decoration: none;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            transition: opacity 0.3s;
-            min-width: 250px;
-            justify-content: center;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 30px;
         }
-        .btn-insta { background: var(--insta); }
-        .btn-gmail { background: var(--gmail); }
-        .btn-back { background: var(--primary); margin-top: 30px; }
 
-        footer { text-align: center; padding: 40px; color: #94a3b8; font-weight: 500; }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div onclick="showPage('home')" class="logo">ABDULLAH<span>COPY</span></div>
-        <div class="nav-links">
-            <a onclick="showPage('home')">Home</a>
-            <a onclick="showPage('contact')">Hire Me</a>
+    <div class="container">
+        <header>
+            <h1>I help <span class="highlight">Fitness & Skincare</span> brands scale.</h1>
+            <p class="tagline">Direct-response Emails + High-ROAS Ads.</p>
+            <a href="mailto:your@email.com" class="cta-button">Work with me</a>
+        </header>
+
+        <div class="section-title">Selected Work</div>
+
+        <div class="card">
+            <span class="niche-tag skincare">Skincare</span>
+            <h3>GlowMist Rose Water: The "Filter-Free" Campaign</h3>
+            <p>Swapped clinical jargon for "Main Character" storytelling. Resulted in a 42% increase in CTR on Meta Ads.</p>
         </div>
-    </nav>
 
-    <div id="home" class="page active">
-        <section class="hero">
-            <h1>I turn "Scrollers" into <span class="highlight">Shoppers.</span></h1>
-            <p>Direct-Response Copywriter focused on ROI. I use psychological triggers to make your audience click, subscribe, and buy.</p>
-            <button onclick="showPage('contact')" class="btn-contact btn-insta" style="background: var(--primary);">Get A Free Copy Audit</button>
-        </section>
-
-        <section class="portfolio">
-            <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">Some EMAIL Examples</h2>
-            <div class="grid">
-                <div class="card" onclick="showPage('glowmist-detail')">
-                    <span class="tag">Skincare</span>
-                    <h3>GlowMist Rose Water</h3>
-                    <p>How I used scarcity and proof to sell skincare. <strong>View Case Study →</strong></p>
-                </div>
-                <div class="card" onclick="showPage('eclipse-detail')">
-                    <span class="tag">Luxury</span>
-                    <h3>Eclipse Watch Series</h3>
-                    <p>The power of premium storytelling for high-ticket sales. <strong>View Case Study →</strong></p>
-                </div>
-                <div class="card" onclick="showPage('lcyes-detail')">
-                    <span class="tag">Sports Apparel</span>
-                    <h3>Lcyes Aero-Jerseys</h3>
-                    <p>Performance-driven copy for elite athletes. <strong>View Case Study →</strong></p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-<div id="contact" class="page">
-        <section class="contact-section">
-            <h1>Let's Scale <span class="highlight">Together.</span></h1>
-            <p>Ready to turn your traffic into revenue? Reach out via Instagram or Email.</p>
-            
-            <div class="contact-grid">
-                <a href="https://www.instagram.com/abdullahh.copywriter" target="_blank" class="btn-contact btn-insta">
-                    Chat on Instagram
-                </a>
-
-                <div class="btn-contact btn-gmail" style="cursor: default; opacity: 1;">
-                    Mail: abdullahnoor67890321@gmail.com
-                </div>
-            </div>
-            
-            <button onclick="showPage('home')" class="btn-contact btn-back">← Back to Portfolio</button>
-        </section>
-    </div>
-
-    <div id="glowmist-detail" class="page">
-        <div class="project-detail">
-            <span class="tag">Skincare / Beauty</span>
-            <h1>GlowMist Rose Water</h1>
-            <h2>The Strategy</h2>
-            <p>Moving away from "soft" beauty talk to result-driven urgency using a 36-hour proof window and psychological scarcity.</p>
-            
-            <div class="copy-box">
-                🫥 <strong>Depressed by Dull Skin?</strong><br>
-                Want to look more attractive? Say goodbye to your old look with GlowMist Rose Water.<br><br>
-                • It has a secret 30/40 Formula 🧪<br>
-                • Vitamin C & Niacinamide Serums<br>
-                • Safe and Clinically Proven<br><br>
-                🕛 Sarah had dull skin full of acne. After using our product, she started to see results in just 36 hours.<br><br>
-                🎁 <strong>First 5 customers get 50% OFF.</strong><br>
-                Grab yours now: glowmist.com
-            </div>
-            
-            <button onclick="showPage('home')" class="btn-contact btn-back">← Back to Home</button>
+        <div class="card">
+            <span class="niche-tag fitness">Fitness</span>
+            <h3>IronCore Supplements: Retention Flow</h3>
+            <p>A 7-day automated email sequence for post-purchase upsells. Recovered 15% of abandoned carts in month one.</p>
         </div>
+
+        <div class="section-title">The Strategy</div>
+        <p>I don't just "write." I research the deep-seated psychology of your customer. Whether it's the frustration of dull skin or the plateau of a workout routine, I find the hook that makes them click.</p>
+
+        <footer>
+            &copy; 2026 | Built for Conversion
+        </footer>
     </div>
 
-    <div id="eclipse-detail" class="page">
-        <div class="project-detail">
-            <span class="tag">Luxury / Accessories</span>
-            <h1>Eclipse Watch Series</h1>
-            <h2>The Strategy</h2>
-            <p>I used the <strong>"Lifestyle Contrast"</strong> method—showing how a single product fits into multiple high-stakes environments like the boardroom and the ballroom.</p>
-            
-            <div class="copy-box">
-                <strong>Brilliance in every detail. Elegance in every move.</strong><br><br>
-                Discover the Eclipse Series—our finest collection of hand-crafted timepieces.<br><br>
-                Built with our 24/7 Formula, it’s engineered for absolute comfort from the boardroom to the ballroom.<br><br>
-                🎁 <strong>Limited Edition.</strong> Only available for the next 12 hours.<br><br>
-                [Reserve Yours: deluxewatches.com]
-            </div>
-            
-            <button onclick="showPage('home')" class="btn-contact btn-back">← Back to Home</button>
-        </div>
-    </div>
-
-    <div id="lcyes-detail" class="page">
-        <div class="project-detail">
-            <span class="tag">Sports / Apparel</span>
-            <h1>Lcyes Aero-Jerseys</h1>
-            <h2>The Strategy</h2>
-            <p>Positioning a local Sialkot product for the global market by focusing on <strong>Precision Engineering</strong> and <strong>Performance</strong> rather than just price.</p>
-            
-            <div class="copy-box">
-                🏅 <strong>Meet the Lcyes 'Aero' Series — The Future of Performance.</strong><br><br>
-                Run lighter. Move faster. Leave the weight of sweat behind.<br><br>
-                <strong>Precision Engineering. Sialkot Heritage.</strong><br>
-                Crafted with our proprietary <strong>Ultra-Light Mesh</strong> and high-grade breathable polyester for maximum airflow. 🧪<br><br>
-                🦁 <strong>The 24-Hour Blitz:</strong><br>
-                Claim your first custom jersey at <span style="color: var(--primary);">www.lceys.com</span> and take <strong>20% OFF</strong>.<br><br>
-                🕛 <em>Don't just play the game. Dominate it.</em>
-            </div>
-            
-            <button onclick="showPage('home')" class="btn-contact btn-back">← Back to Home</button>
-        </div>
-    </div>
-
-    <footer>&copy; 2026 AbdullahCopywriter | Sialkot to the World</footer>
-
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-    </script>
 </body>
 </html>
-
-
-
