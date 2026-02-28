@@ -3,142 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copywriter | Fitness & Skincare Specialist</title>
+    <title>Copywriter | Fitness & Skincare Results</title>
     <style>
         :root {
-            --bg: #0a0a0a;
-            --card: #161616;
-            --text: #ededed;
-            --accent: #ccff00; /* Neon Lime for Fitness/Energy */
-            --soft: #ff8fab; /* Soft Pink for Skincare */
+            --bg: #0d0d0d;
+            --card: #1a1a1a;
+            --text: #f4f4f4;
+            --accent: #d4ff00; /* Fitness Green */
+            --soft: #ffafcc;   /* Skincare Pink */
+            --gray: #888;
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
             margin: 0;
-            padding: 0;
+            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 60px 0;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
+        h1 { font-size: 3.5rem; letter-spacing: -2px; margin: 0; line-height: 1.1; }
+        .hero-sub { color: var(--gray); font-size: 1.2rem; margin-top: 20px; max-width: 600px; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: var(--text);
+            color: var(--bg);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: 0.3s;
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #888;
-        }
+        .btn:hover { background: var(--accent); transform: scale(1.05); }
 
-        .highlight {
-            color: var(--accent);
-        }
+        section { padding: 80px 0; }
+        .section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gray); margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        /* Portfolio Grid */
-        .section-title {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: #555;
-            margin-top: 50px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 10px;
-        }
+        .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
         .card {
             background: var(--card);
-            border-radius: 12px;
-            padding: 30px;
-            margin: 20px 0;
-            border: 1px solid #222;
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #333;
-        }
-
-        .niche-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .fitness { background: var(--accent); color: black; }
-        .skincare { background: var(--soft); color: black; }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--text);
-            color: var(--bg);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            margin-top: 30px;
-        }
-
-        footer {
-            text-align: center;
             padding: 40px;
-            color: #444;
-            font-size: 0.9rem;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: 0.3s;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
+        .card:hover { border-color: #444; }
+        
+        .tag { font-size: 0.7rem; font-weight: bold; padding: 4px 12px; border-radius: 50px; text-transform: uppercase; }
+        .fit-tag { background: var(--accent); color: black; }
+        .skin-tag { background: var(--soft); color: black; }
+
+        .copy-sample { background: #111; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 3px solid var(--accent); font-size: 0.95rem; }
+        .skin-sample { border-left-color: var(--soft); }
+
+        h3 { margin: 15px 0; font-size: 1.5rem; }
+        p { color: #aaa; }
+        label { color: var(--gray); font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 5px; }
+
+        footer { text-align: center; padding: 100px 0; color: #444; border-top: 1px solid #222; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .work-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>I help <span class="highlight">Fitness & Skincare</span> brands scale.</h1>
-            <p class="tagline">Direct-response Emails + High-ROAS Ads.</p>
-            <a href="mailto:your@email.com" class="cta-button">Work with me</a>
-        </header>
+<div class="container">
+    <header>
+        <h1>I help <span style="color:var(--accent)">Fitness</span> & <span style="color:var(--soft)">Skincare</span> brands scale.</h1>
+        <p class="hero-sub">Direct-response copy that stops the scroll and prints money. No robotic templates. Just human psychology.</p>
+        <a href="#work" class="btn">View My Proof</a>
+    </header>
 
-        <div class="section-title">Selected Work</div>
+    <section id="work">
+        <div class="section-title">Selected Work & Samples</div>
+        
+        <div class="work-grid">
+            <div class="card">
+                <span class="tag fit-tag">Fitness / Performance</span>
+                <h3>IronCore Nutrition</h3>
+                <p>Scaling a supplement brand from "just another pre-workout" to a community staple.</p>
+                
+                <div class="copy-sample">
+                    <label>Ad: The Plateau Buster</label>
+                    "Same weights, different day? 📉 A plateau is just your body asking for better fuel. IronCore gives you the sustained fire you need for the 4 AM grind. No jitters, just PRs."
+                </div>
 
-        <div class="card">
-            <span class="niche-tag skincare">Skincare</span>
-            <h3>GlowMist Rose Water: The "Filter-Free" Campaign</h3>
-            <p>Swapped clinical jargon for "Main Character" storytelling. Resulted in a 42% increase in CTR on Meta Ads.</p>
+                <div class="copy-sample">
+                    <label>Email: The Reality Check</label>
+                    "Subject: You didn't wake up to be mediocre.<br><br>The hardest rep isn't in the gym. It's the moment you decide to get out of bed. We built IronCore for that exact second..."
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="tag skin-tag">Skincare / Beauty</span>
+                <h3>GlowMist Rose Water</h3>
+                <p>Humanizing the "science of glow" to drive repeat purchases and massive retention.</p>
+                
+                <div class="copy-sample skin-sample">
+                    <label>Ad: The Filter-Free Hook</label>
+                    "Stop checking the lighting. 🕯️ If you're tired of hiding behind 'smooth' filters, fix the canvas. GlowMist isn't a cover-up; it’s a 48-hour hydration reset for tired skin."
+                </div>
+
+                <div class="copy-sample skin-sample">
+                    <label>Email: The Secret</label>
+                    "Subject: Why your skin 'grayed' by 2 PM...<br><br>Most mists are just expensive water. We added Niacinamide to actually lock in the moisture, so you keep that morning glow until dinner."
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <span class="niche-tag fitness">Fitness</span>
-            <h3>IronCore Supplements: Retention Flow</h3>
-            <p>A 7-day automated email sequence for post-purchase upsells. Recovered 15% of abandoned carts in month one.</p>
-        </div>
+    <section id="contact" style="text-align: center;">
+        <div class="section-title">Ready to grow?</div>
+        <h2>Stop guessing. Start converting.</h2>
+        <p>I’m currently taking on 2 new clients for Q2.</p>
+        <a href="mailto:your@email.com" class="btn">Email Me Directly</a>
+    </section>
 
-        <div class="section-title">The Strategy</div>
-        <p>I don't just "write." I research the deep-seated psychology of your customer. Whether it's the frustration of dull skin or the plateau of a workout routine, I find the hook that makes them click.</p>
-
-        <footer>
-            &copy; 2026 | Built for Conversion
-        </footer>
-    </div>
+    <footer>
+        &copy; 2026 | Built for Conversion | No Fluff.
+    </footer>
+</div>
 
 </body>
 </html>
